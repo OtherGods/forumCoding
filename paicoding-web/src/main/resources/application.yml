@@ -5,8 +5,6 @@ server:
       timeout: 5m # 设置session的有效期为五分钟
 
 spring:
-  application:
-    name: paicoding
   #  Spring Boot 2.4为了提升对Kubernetes的支持 将 spring.profiles 作废了
   #  profiles:
   #    active: dal,web,config,image
@@ -77,32 +75,3 @@ knife4j:
         api-rule: package
         api-rule-resources:
           - com.github.paicoding.forum.web.front
-
-# canal配置
-canal:
-  # canal的地址
-  server: 127.0.0.1:11111
-  # 默认的数据同步的目的地
-  destination: example
-
-# 配置Actuator
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  # 配置暴露 Protheus，并允许将我的列表导入到 Prometheus
-  endpoint:
-    prometheus:
-      enabled: true
-    health:
-      show-details: ALWAYS
-  metrics:
-    export:
-      prometheus:
-        enabled: true
-
-env101:
-  var1: var1-李旭东
-  var2: var2-hhy
-  var3: var3-ssy

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# 部署   24.6.16
 # pid file
 PID_FILE_NAME="pid.log"
 

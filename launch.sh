@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# 启动   24.6.16
+
 WEB_PATH="paicoding-web"
 JAR_NAME="paicoding-web-0.0.1-SNAPSHOT.jar"
 

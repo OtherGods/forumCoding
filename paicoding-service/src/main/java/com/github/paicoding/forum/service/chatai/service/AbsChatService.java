@@ -119,18 +119,15 @@ public abstract class AbsChatService implements ChatService {
 
     private ChatRecordsVo initResVo(Long user, String question) {
         ChatRecordsVo res = new ChatRecordsVo();
-        //选择具体的AI实现
         res.setSource(source());
-        //最大可提问次数
         int maxCnt = getMaxQaCnt(user);
-        //已提问次数
         int usedCnt = queryUserdCnt(user);
         res.setMaxCnt(maxCnt);
         res.setUsedCnt(usedCnt);
 
         ChatItemVo item = new ChatItemVo().initQuestion(question);
         if (!res.hasQaCnt()) {
-            // 次数已经使用完毕，直接返回对应结果
+            // 次数已经使用完毕
             item.initAnswer(ChatConstants.TOKEN_OVER);
         }
         res.setRecords(Arrays.asList(item));

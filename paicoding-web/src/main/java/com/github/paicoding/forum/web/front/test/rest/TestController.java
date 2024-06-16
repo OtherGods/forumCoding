@@ -209,7 +209,7 @@ public class TestController {
      * @param beanName
      * @return
      */
-    //@Permission(role = UserRole.ADMIN)
+    @Permission(role = UserRole.ADMIN)
     @GetMapping("print")
     public String printInfo(String beanName) throws Exception {
         Object bean = SpringUtil.getBeanOrNull(beanName);
@@ -245,7 +245,7 @@ public class TestController {
      *
      * @return
      */
-    //@Permission(role = UserRole.ADMIN)
+    @Permission(role = UserRole.ADMIN)
     @GetMapping("refresh/config")
     public String refreshConfig() {
         DynamicConfigContainer registry = SpringUtil.getBean(DynamicConfigContainer.class);

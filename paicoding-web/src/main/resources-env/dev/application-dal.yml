@@ -28,17 +28,10 @@ spring:
         url: jdbc:mysql://123.56.80.35:3306/${database.name}?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
         username: lxd
         password: 271441
-
-# reids 单节点
   redis:
     host: 123.56.80.35
     port: 6379
     password:
-# redis 集群（部署在47.93.184.165）
-#  cluster:
-#      nodes: 47.93.184.165:7000,47.93.184.165:7001,47.93.184.165:7002
-#      max-redirects: 3
-
 
 # elasticsearch配置
 elasticsearch:
