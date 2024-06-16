@@ -25,7 +25,7 @@ public class CacheBuilderExample {
         LoadingCache<String, String> cache = cacheBuilder.build(new CacheLoader<String, String>() {
             @Override
             public String load(String key) throws Exception {
-                return "value：" + key; // 当缓存中没有值时，加载对应的值并返回
+                return "value：" + System.currentTimeMillis(); // 当缓存中没有值时，加载对应的值并返回
             }
         });
 
@@ -40,5 +40,7 @@ public class CacheBuilderExample {
 
         // 打印缓存的命中率等统计信息
         System.out.println(cache.stats());
+        System.out.println(cache.asMap());
+        System.out.println(cacheBuilder.recordStats());
     }
 }
