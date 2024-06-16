@@ -135,7 +135,8 @@ public class ChatFacade {
      * @return
      */
     public ChatRecordsVo chat(AISourceEnum source, String question) {
-        return chatServiceFactory.getChatService(source).chat(ReqInfoContext.getReqInfo().getUserId(), question);
+        return chatServiceFactory.getChatService(source)
+                .chat(ReqInfoContext.getReqInfo().getUserId(), question);
     }
 
     /**
